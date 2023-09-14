@@ -1,0 +1,196 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titulo">
+      Asignaturas
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-menu-button slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-menu-button>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="fondo">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Calidad de Software</ion-card-title>
+      <ion-card-subtitle>2023_2_PA_CSY4111_24040062_PCT</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Profesor: Victor Javier Andrade Farias
+    </ion-card-content>
+
+    <ion-accordion-group>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>Asistencia</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ul>
+            <li *ngFor="let asistencia of asistencias.slice(0, limiteMostrar)">
+              <span [style.background-color]="asistencia.estado === 'Presente' ? 'green' : 'red'"
+                style="border-radius: 50%; display: inline-block; width: 10px; height: 10px; margin-right: 5px;"></span>
+              <span [style.color]="asistencia.estado === 'Presente' ? 'green' : 'red'">{{ asistencia.fecha }}</span> <br>
+              <span>{{ asistencia.estado }}</span>
+            </li>
+          </ul>
+          <ion-icon class="boton" *ngIf="mostrarBotonVerMas" (click)="verMas()" name="add"></ion-icon>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+    
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ética Para el Trabajo</ion-card-title>
+      <ion-card-subtitle>2023_2_PA_CSY4111_24040062_PCT</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Profesor: Victor Javier Andrade Farias
+    </ion-card-content>
+
+    <ion-accordion-group>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>Asistencia</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ul>
+            <li *ngFor="let asistencia of asistencias.slice(0, limiteMostrar)">
+              <span [style.background-color]="asistencia.estado === 'Presente' ? 'green' : 'red'"
+                style="border-radius: 50%; display: inline-block; width: 10px; height: 10px; margin-right: 5px;"></span>
+              <span [style.color]="asistencia.estado === 'Presente' ? 'green' : 'red'">{{ asistencia.fecha }}</span> <br>
+              <span>{{ asistencia.estado }}</span>
+            </li>
+          </ul>
+          <ion-icon class="boton" *ngIf="mostrarBotonVerMas" (click)="verMas()" name="add"></ion-icon>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Inglés Intermedio</ion-card-title>
+      <ion-card-subtitle>2023_2_PA_CSY4111_24040062_PCT</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Profesor: Victor Javier Andrade Farias
+    </ion-card-content>
+
+    <ion-accordion-group>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>Asistencia</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ul>
+            <li *ngFor="let asistencia of asistencias.slice(0, limiteMostrar)">
+              <span [style.background-color]="asistencia.estado === 'Presente' ? 'green' : 'red'"
+                style="border-radius: 50%; display: inline-block; width: 10px; height: 10px; margin-right: 5px;"></span>
+              <span [style.color]="asistencia.estado === 'Presente' ? 'green' : 'red'">{{ asistencia.fecha }}</span> <br>
+              <span>{{ asistencia.estado }}</span>
+            </li>
+          </ul>
+          <ion-icon class="boton" *ngIf="mostrarBotonVerMas" (click)="verMas()" name="add"></ion-icon>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Arquitectura</ion-card-title>
+      <ion-card-subtitle>2023_2_PA_CSY4111_24040062_PCT</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Profesor: Victor Javier Andrade Farias
+    </ion-card-content>
+
+    <ion-accordion-group>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>Asistencia</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ul>
+            <li *ngFor="let asistencia of asistencias.slice(0, limiteMostrar)">
+              <span [style.background-color]="asistencia.estado === 'Presente' ? 'green' : 'red'"
+                style="border-radius: 50%; display: inline-block; width: 10px; height: 10px; margin-right: 5px;"></span>
+              <span [style.color]="asistencia.estado === 'Presente' ? 'green' : 'red'">{{ asistencia.fecha }}</span> <br>
+              <span>{{ asistencia.estado }}</span>
+            </li>
+          </ul>
+          <ion-icon class="boton" *ngIf="mostrarBotonVerMas" (click)="verMas()" name="add"></ion-icon>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Programación de Aplicaciones</ion-card-title>
+      <ion-card-subtitle>2023_2_PA_CSY4111_24040062_PCT</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Profesor: Victor Javier Andrade Farias
+    </ion-card-content>
+
+    <ion-accordion-group>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>Asistencia</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ul>
+            <li *ngFor="let asistencia of asistencias.slice(0, limiteMostrar)">
+              <span [style.background-color]="asistencia.estado === 'Presente' ? 'green' : 'red'"
+                style="border-radius: 50%; display: inline-block; width: 10px; height: 10px; margin-right: 5px;"></span>
+              <span [style.color]="asistencia.estado === 'Presente' ? 'green' : 'red'">{{ asistencia.fecha }}</span> <br>
+              <span>{{ asistencia.estado }}</span>
+            </li>
+          </ul>
+          <ion-icon class="boton" *ngIf="mostrarBotonVerMas" (click)="verMas()" name="add"></ion-icon>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Estadística Descriptiva</ion-card-title>
+      <ion-card-subtitle>2023_2_PA_CSY4111_24040062_PCT</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Profesor: Victor Javier Andrade Farias
+    </ion-card-content>
+
+    <ion-accordion-group>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>Asistencia</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ul>
+            <li *ngFor="let asistencia of asistencias.slice(0, limiteMostrar)">
+              <span [style.background-color]="asistencia.estado === 'Presente' ? 'green' : 'red'"
+                style="border-radius: 50%; display: inline-block; width: 10px; height: 10px; margin-right: 5px;"></span>
+              <span [style.color]="asistencia.estado === 'Presente' ? 'green' : 'red'">{{ asistencia.fecha }}</span> <br>
+              <span>{{ asistencia.estado }}</span>
+            </li>
+          </ul>
+          <ion-icon class="boton" *ngIf="mostrarBotonVerMas" (click)="verMas()" name="add"></ion-icon>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-card>
+</ion-content>

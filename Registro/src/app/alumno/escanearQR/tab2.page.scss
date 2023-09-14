@@ -1,0 +1,29 @@
+.titulo{
+    text-align: center;
+    padding-left: 80px;
+}
+
+.codigoQR {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+}
+
+.codigoManual{
+    width: 90%;
+    text-align: center;
+    margin: 5%;
+}
+
+ion-button{
+    margin-top: 5%;
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+}
+
+ion-input{
+    max-width: 500px;
+    margin: auto;
+}

@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    flex-direction: column; /* Cambiar a una columna */
+    height: 100vh; /* 100% de la altura de la ventana */
+}
+
+.container{
+    height: 100%;
+    justify-content: center;
+}
+
+.logo{
+    height: 30%;
+    text-align: center;
+    background-color: var(--ion-color-danger-shade);
+
+}
+
+.logo img{
+    margin-top: 30px;
+    width: 40%;
+    max-width: 200px;
+}
+
+.datos{
+    height: 40%;
+    margin-top: 2%;
+}
+
+.datos ion-input{
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.botones{
+    margin-top: 2%;
+    margin-bottom: 20px;
+    height: 30%;
+    text-align: center;
+}
+
+ion-button{
+    width: 90%;
+    max-width: 500px;
+    height: 50px;
+    margin-top: 1%;
+}

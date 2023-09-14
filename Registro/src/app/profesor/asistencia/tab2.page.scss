@@ -1,0 +1,70 @@
+.titulo {
+    text-align: center;
+    padding-left: 80px;
+}
+
+.codigoQR {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+}
+
+.codigoManual {
+    width: 90%;
+    text-align: center;
+    margin: 5%;
+}
+
+ion-button {
+    margin-top: 5%;
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+}
+
+ion-input {
+    max-width: 500px;
+    margin: auto;
+}
+
+ion-select {
+    padding-left: 2%;
+}
+
+ion-popover {
+    --width: 600px;
+}
+
+ion-radio-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+ion-radio {
+    flex: 1;
+    border-right: 1px solid #ccc;
+    padding: 0 10px;
+    
+}
+
+@media (max-width: 767px) {
+    .nombre{
+        width: 40%;
+    }
+    ion-radio {
+        width: fit-content;
+        font-size: x-small;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0;
+    }
+  }
+
+@media (min-width: 768px) {
+    ion-select {
+        width: 76%;
+        padding-left: 24%;
+    }
+
+}

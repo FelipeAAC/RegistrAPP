@@ -1,0 +1,7 @@
+{
+  "name": "Registro",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

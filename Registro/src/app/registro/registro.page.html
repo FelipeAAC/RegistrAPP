@@ -1,0 +1,21 @@
+<ion-content>
+  <div class="container">
+    <div class="logo">
+      <img alt="Duocuc" src="../../assets/icon/LogoQR.png" />
+    </div>
+    <div class="datos">
+      <ion-input label="Nombre" label-placement="floating" fill="outline"
+        placeholder="Maike"></ion-input>
+      <ion-input label="Correo" label-placement="floating" fill="outline" type="email"
+        placeholder="correo.ejemplo@duocuc.cl"></ion-input>
+      <ion-input label="Contraseña" label-placement="floating" fill="outline" type="password"
+        placeholder="*********"></ion-input>
+        <ion-input label="Confirmar Contraseña" label-placement="floating" fill="outline" type="password"
+        placeholder="*********"></ion-input>
+    </div>
+    <div class="botones">
+      <ion-button [routerLink]="['/login']">Registrate</ion-button><br>
+      <ion-button [routerLink]="['/login']">Ya tienes cuenta?</ion-button>
+    </div>
+  </div>
+</ion-content>

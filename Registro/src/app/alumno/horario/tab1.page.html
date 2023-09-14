@@ -1,0 +1,186 @@
+<ion-header [translucent]="true">
+ <ion-toolbar>
+    <ion-title class="titulo">
+      Horario
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-menu-button slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-menu-button>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<ion-toolbar>
+  <ion-segment [(ngModel)]="selectedSegment">
+    <ion-segment-button value="lunes">L</ion-segment-button>
+    <ion-segment-button value="martes">M</ion-segment-button>
+    <ion-segment-button value="miercoles">M</ion-segment-button>
+    <ion-segment-button value="jueves">J</ion-segment-button>
+    <ion-segment-button value="viernes">V</ion-segment-button>
+    <ion-segment-button value="sabado">S</ion-segment-button>
+    <ion-segment-button value="domingo">D</ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+  <div *ngIf="selectedSegment === 'lunes'">
+    
+    <ion-card [ngClass]="{ 'selected-card': isSelected }" (click)="toggleSelection()">
+      <ion-card-header>
+        <ion-card-title>Calidad de Software</ion-card-title>
+        <ion-card-subtitle>10:01 a 11:20</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        Profesor: Victor Javier Andrade Farias
+        <br>
+        Sala: LC13 Laboratorio de Computación(30)
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card button="true">
+      <ion-card-header>
+        <ion-card-title>Ética Para el Trabajo</ion-card-title>
+        <ion-card-subtitle>11:31 a 12:50</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        Profesor: Fabiola Janet Leiva Rojas
+        <br>
+        Sala: 512 Sala de Clases (63)
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card button="true">
+      <ion-card-header>
+        <ion-card-title>Inglés Intermedio</ion-card-title>
+        <ion-card-subtitle>14:31 a 16:40</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        Profesor: Rodrigo Ignacio Gonzales Orrego
+        <br>
+        Sala: 523 Laboratorio de Computación(25)
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="selectedSegment === 'martes'">
+  <ion-card button="true">
+    <ion-card-header>
+      <ion-card-title>Arquitectura</ion-card-title>
+      <ion-card-subtitle>8:30 a 10:40</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Profesor: Jeanette Herminia Leonelli Riffo 
+      <br>
+      Sala: LC12 Laboratorio de Computación(30)
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card button="true">
+    <ion-card-header>
+      <ion-card-title>Estadística Descriptiva</ion-card-title>
+      <ion-card-subtitle>11:31 a 12:50</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Profesor: Juan Antonio Barrera Labra
+      <br>
+      Sala: LC6 Laboratorio de Computación(30)
+    </ion-card-content>
+  </ion-card>
+  </div>
+
+  <div *ngIf="selectedSegment === 'miercoles'">
+  <ion-card button="true"> 
+    <ion-card-header>
+      <ion-card-title>Programación de Aplicaciones</ion-card-title>
+      <ion-card-subtitle>10:41 a 12:50</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Profesor: Freddy Mauricio Campos Orellana
+      <br>
+      Sala: LC13 Laboratorio de Computación(30)
+    </ion-card-content>
+  </ion-card>
+  </div>
+
+  <div *ngIf="selectedSegment === 'jueves'">
+  <ion-card button="true">
+    <ion-card-header>
+      <ion-card-title>Calidad de Software</ion-card-title>
+      <ion-card-subtitle>13:01 a 14:20</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Profesor: Victor Javier Andrade Farias
+      <br>
+      Sala: LC12 Laboratorio de Computación(30)
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card button="true">
+    <ion-card-header>
+      <ion-card-title>Inglés Intermedio</ion-card-title>
+      <ion-card-subtitle>14:31 a 15:50</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Profesor: Rodrigo Ignacio Gonzales Orrego
+      <br>
+      Sala: 522 Laboratorio de Computación(25)
+    </ion-card-content>
+  </ion-card>
+  </div>
+
+  <div *ngIf="selectedSegment === 'viernes'">
+    <ion-card button="true">
+      <ion-card-header>
+        <ion-card-title>Arquitectura</ion-card-title>
+        <ion-card-subtitle>8:30 a 09:50</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        Profesor: Jeanette Herminia Leonelli Riffo 
+        <br>
+        Sala: LC12 Laboratorio de Computación(30)
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card button="true"> 
+      <ion-card-header>
+        <ion-card-title>Programación de Aplicaciones</ion-card-title>
+        <ion-card-subtitle>11:31 a 12:50</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        Profesor: Freddy Mauricio Campos Orellana
+        <br>
+        Sala: LC13 Laboratorio de Computación(30)
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card button="true">
+      <ion-card-header>
+        <ion-card-title>Estadística Descriptiva</ion-card-title>
+        <ion-card-subtitle>11:31 a 12:50</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        Profesor: Juan Antonio Barrera Labra
+        <br>
+        Sala: LC2 Laboratorio de Computación(30)
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card button="true">
+      <ion-card-header>
+        <ion-card-title>Inglés Intermedio</ion-card-title>
+        <ion-card-subtitle>13:01 a 15:30</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        Profesor: Rodrigo Ignacio Gonzales Orrego
+        <br>
+        Sala: 523 Laboratorio de Computación(25)
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="selectedSegment === 'sabado'">
+  </div>
+</ion-content> 
+ 

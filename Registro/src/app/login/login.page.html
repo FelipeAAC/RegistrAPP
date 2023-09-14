@@ -1,0 +1,18 @@
+<ion-content>
+  <div class="container">
+    <div class="logo">
+      <img alt="Duocuc" src="../../assets/icon/LogoQR.png" />
+    </div>
+    <div class="datos">
+      <ion-input label="Ingrese el Correo" label-placement="floating" fill="outline" type="email"
+        placeholder="correo.ejemplo@duocuc.cl" [(ngModel)]="email"></ion-input>
+      <ion-input label="Ingresa la Contraseña" label-placement="floating" fill="outline" type="password"
+        placeholder="*********" [(ngModel)]="password"></ion-input>
+    </div>
+    <div class="botones">
+      <ion-button (click)="iniciarSesion()">Iniciar Sesión</ion-button><br>
+      <ion-button [routerLink]="['/registro']">Registrarse</ion-button><br>
+      <ion-button [routerLink]="['/recuperar']">Recuperar contraseña</ion-button>
+    </div>
+  </div>
+</ion-content>

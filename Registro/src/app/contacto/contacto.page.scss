@@ -1,0 +1,23 @@
+.titulo{
+    text-align: center;
+    padding-left: 80px;
+}
+.custom-button {
+    --background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+ 
+  .icono {
+    font-size: 200px;
+    color: #007bff;
+    margin: 0 auto;
+    border: 2px solid gray;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+  }
+  

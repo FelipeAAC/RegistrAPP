@@ -1,0 +1,116 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titulo">
+      Cursos
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-menu-button slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-menu-button>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="fondo">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Arquitectura_005D</ion-card-title>
+      <ion-card-subtitle>2023_2_PA_ASY4131_24040055_PCT
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Progreso: 12/30
+    </ion-card-content>
+
+    <ion-accordion-group>
+  <ion-accordion value="first">
+    <ion-item slot="header" color="light">
+      <ion-label>Asistencia</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <ion-row style="border-bottom: groove;" *ngFor="let persona of personas; let i = index">
+        <ion-col col-3>
+          <ion-button (click)="eliminarPersona(i)" class="custom-button">
+            <ion-icon name="trash" class="custom-icon"></ion-icon>
+          </ion-button>          
+        </ion-col>
+        <ion-col col-3>
+          <ion-label>{{ persona.nombre }}</ion-label>
+        </ion-col>
+        <ion-col col-2>
+          <ion-label>{{ persona.porcentaje }}%</ion-label>
+        </ion-col>
+        <ion-col col-2>
+          <ion-label>{{ persona.asistencia }}</ion-label>
+        </ion-col>
+        <ion-col col-2>
+          <ion-label>{{ persona.estado }}</ion-label>
+        </ion-col>
+        <ion-col col-3>
+          <ion-button (click)="editarInformacion(persona)" class="custom-button">
+            <ion-icon name="pencil" class="custom-icon"></ion-icon>
+          </ion-button>
+          <ion-button (click)="agregarPersona()" class="custom-button">
+            <ion-icon name="add-circle" class="custom-icon"></ion-icon>
+          </ion-button>
+        </ion-col>        
+      </ion-row>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>
+
+    
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>CALIDAD DE SOFTWARE_004D</ion-card-title>
+      <ion-card-subtitle>2023_2_PA_CSY4111_24040062_PCT
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Progreso: 12/30
+    </ion-card-content>
+
+    <ion-accordion-group>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>Asistencia</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-row style="border-bottom: groove;" *ngFor="let persona of personas; let i = index">
+            <ion-col col-3>
+              <ion-button (click)="eliminarPersona(i)" class="custom-button">
+                <ion-icon name="trash" class="custom-icon"></ion-icon>
+              </ion-button>          
+            </ion-col>
+            <ion-col col-3>
+              <ion-label>{{ persona.nombre }}</ion-label>
+            </ion-col>
+            <ion-col col-2>
+              <ion-label>{{ persona.porcentaje }}%</ion-label>
+            </ion-col>
+            <ion-col col-2>
+              <ion-label>{{ persona.asistencia }}</ion-label>
+            </ion-col>
+            <ion-col col-2>
+              <ion-label>{{ persona.estado }}</ion-label>
+            </ion-col>
+            <ion-col col-3>
+              <ion-button (click)="editarInformacion(persona)" class="custom-button">
+                <ion-icon name="pencil" class="custom-icon"></ion-icon>
+              </ion-button>
+              <ion-button (click)="agregarPersona()" class="custom-button">
+                <ion-icon name="add-circle" class="custom-icon"></ion-icon>
+              </ion-button>
+            </ion-col>        
+          </ion-row>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-card>
+
+</ion-content>
