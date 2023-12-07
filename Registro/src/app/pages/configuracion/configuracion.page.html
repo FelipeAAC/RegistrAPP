@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titulo">Configuración</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-menu-button slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-menu-button>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" [class.dark-theme]="darkMode">
+  <ion-item>
+    <ion-label>Notificaciones</ion-label>
+    <ion-toggle [(ngModel)]="enableNotifications"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Idioma</ion-label>
+    <ion-select [(ngModel)]="selectedLanguage" placeholder="Selecciona un idioma" label="Idioma">
+      <ion-select-option value="es">Español</ion-select-option>
+      <ion-select-option value="en">English</ion-select-option>
+      <ion-select-option value="pt">Português</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Modo Oscuro</ion-label>
+    <ion-toggle [(ngModel)]="darkMode" (ionChange)="toggleDarkMode()"></ion-toggle>
+  </ion-item>
+
+  <ion-button expand="full" (click)="saveSettings()">Guardar</ion-button>
+</ion-content>

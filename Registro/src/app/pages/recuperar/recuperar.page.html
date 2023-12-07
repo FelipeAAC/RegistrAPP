@@ -1,0 +1,27 @@
+<ion-content>
+  <div class="escritorio">
+    <div class="container">
+      <div class="logo">
+        <img alt="Duocuc" src="../../assets/icon/LogoQR.png" />
+      </div>
+      <form [formGroup]="form">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title color="primary">¿Olvidaste tu contraseña?</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-item>
+            <ion-input label="Ingrese el Correo" labelPlacement="floating" placeholder="correo.ejemplo@duocuc.cl"
+              type="email" formControlName="email" ></ion-input>
+          </ion-item>
+          
+          <app-boton label="Recuperar Contraseña" (click)="forgotEmailPassword()" id="recoverPasswordButton"> </app-boton><br>
+          <ion-button shape="round" fill="clear" [routerLink]="['/login']">Volver</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </form>
+    </div>
+  </div>
+
+</ion-content>

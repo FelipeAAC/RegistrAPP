@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titulo">
+      Asignaturas {{ username }}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-menu-button slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-menu-button>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="fondo" >
+  <div *ngFor="let curso of cursos">
+    <app-card-curso [id]="curso.id"></app-card-curso>
+  </div>
+  
+
+</ion-content>

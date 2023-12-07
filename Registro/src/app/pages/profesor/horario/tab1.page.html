@@ -1,0 +1,117 @@
+<ion-header [translucent]="true">
+ <ion-toolbar>
+    <ion-title class="titulo">
+      Horario {{ username }}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-menu-button slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-menu-button>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<ion-toolbar>
+  <ion-segment [(ngModel)]="selectedSegment">
+    <ion-segment-button value="lunes">L</ion-segment-button>
+    <ion-segment-button value="martes">M</ion-segment-button>
+    <ion-segment-button value="miercoles">M</ion-segment-button>
+    <ion-segment-button value="jueves">J</ion-segment-button>
+    <ion-segment-button value="viernes">V</ion-segment-button>
+    <ion-segment-button value="sabado">S</ion-segment-button>
+    <ion-segment-button value="domingo">D</ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+  <div *ngIf="selectedSegment === 'lunes'">
+    
+    <ion-card button="true">
+      <ion-card-header>
+        <ion-card-title>Calidad de Software</ion-card-title>
+        <ion-card-subtitle>10:01 a 11:20</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        Profesor: Mike Wazowski
+        <br>
+        Sala: LC13 Laboratorio de Computación
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card button="true">
+      <ion-card-header>
+        <ion-card-title>Ética Para el Trabajo</ion-card-title>
+        <ion-card-subtitle>11:31 a 12:50</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        Profesor: Mike Wazowski
+        <br>
+        Sala: 512 Sala de Clases
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="selectedSegment === 'martes'">
+  </div>
+
+  <div *ngIf="selectedSegment === 'miercoles'">
+  <ion-card button="true"> 
+    <ion-card-header>
+      <ion-card-title>Programación de Aplicaciones</ion-card-title>
+      <ion-card-subtitle>10:41 a 12:50</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Profesor: Mike Wazowski
+      <br>
+      Sala: LC13 Laboratorio de Computación
+    </ion-card-content>
+  </ion-card>
+  </div>
+
+  <div *ngIf="selectedSegment === 'jueves'">
+ 
+  </div>
+
+  <div *ngIf="selectedSegment === 'viernes'">
+    <ion-card button="true">
+      <ion-card-header>
+        <ion-card-title>Arquitectura</ion-card-title>
+        <ion-card-subtitle>8:30 a 09:50</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        Profesor: Mike Wazowski
+        <br>
+        Sala: LC12 Laboratorio de Computación
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card button="true"> 
+      <ion-card-header>
+        <ion-card-title>Programación de Aplicaciones</ion-card-title>
+        <ion-card-subtitle>11:31 a 12:50</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        Profesor: Mike Wazowski
+        <br>
+        Sala: LC13 Laboratorio de Computación
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card button="true">
+      <ion-card-header>
+        <ion-card-title>Estadística Descriptiva</ion-card-title>
+        <ion-card-subtitle>11:31 a 12:50</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        Profesor: Mike Wazowski
+        <br>
+        Sala: LC2 Laboratorio de Computación
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="selectedSegment === 'sabado'">
+  </div>
+</ion-content> 
+ 

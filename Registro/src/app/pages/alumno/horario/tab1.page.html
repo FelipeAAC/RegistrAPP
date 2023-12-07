@@ -1,0 +1,120 @@
+<ion-header [translucent]="true">
+ <ion-toolbar>
+    <ion-title class="titulo">
+      Horario {{ username }}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-menu-button slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-menu-button>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<ion-toolbar>
+  <ion-segment [(ngModel)]="selectedSegment">
+    <ion-segment-button value="lunes">L</ion-segment-button>
+    <ion-segment-button value="martes">M</ion-segment-button>
+    <ion-segment-button value="miercoles">M</ion-segment-button>
+    <ion-segment-button value="jueves">J</ion-segment-button>
+    <ion-segment-button value="viernes">V</ion-segment-button>
+    <ion-segment-button value="sabado">S</ion-segment-button>
+    <ion-segment-button value="domingo">D</ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+  <div *ngIf="selectedSegment === 'lunes'" >
+    <div *ngFor="let clase of datosLunes">
+      
+      <app-card-horario [ngClass]="{ 'selected-card': isSelected }"
+      [nombre]="clase.curso.nombre"
+      [hora_inicio]="clase.horario.hora_inicio"
+      [hora_termino]="clase.horario.hora_termino"
+      [profesor]="clase.curso.profesor"
+      [sala]="clase.sala"></app-card-horario>
+
+    </div>
+
+  </div>
+
+  <div *ngIf="selectedSegment === 'martes'">
+    <div *ngFor="let clase of datosMartes">
+      
+      <app-card-horario 
+      [nombre]="clase.curso.nombre"
+      [hora_inicio]="clase.horario.hora_inicio"
+      [hora_termino]="clase.horario.hora_termino"
+      [profesor]="clase.curso.profesor"
+      [sala]="clase.sala"></app-card-horario>
+
+    </div>
+  </div>
+
+  <div *ngIf="selectedSegment === 'miercoles'">
+    <div *ngFor="let clase of datosMiercoles">
+      
+      <app-card-horario 
+      [nombre]="clase.curso.nombre"
+      [hora_inicio]="clase.horario.hora_inicio"
+      [hora_termino]="clase.horario.hora_termino"
+      [profesor]="clase.curso.profesor"
+      [sala]="clase.sala"></app-card-horario>
+
+    </div>
+  </div>
+
+  <div *ngIf="selectedSegment === 'jueves'">
+    <div *ngFor="let clase of datosJueves">
+      
+      <app-card-horario 
+      [nombre]="clase.curso.nombre"
+      [hora_inicio]="clase.horario.hora_inicio"
+      [hora_termino]="clase.horario.hora_termino"
+      [profesor]="clase.curso.profesor"
+      [sala]="clase.sala"></app-card-horario>
+
+    </div>
+  </div>
+
+  <div *ngIf="selectedSegment === 'viernes'">
+    <div *ngFor="let clase of datosViernes">
+      
+      <app-card-horario 
+      [nombre]="clase.curso.nombre"
+      [hora_inicio]="clase.horario.hora_inicio"
+      [hora_termino]="clase.horario.hora_termino"
+      [profesor]="clase.curso.profesor"
+      [sala]="clase.sala"></app-card-horario>
+
+    </div>
+  </div>
+
+  <div *ngIf="selectedSegment === 'sabado'">
+    <div *ngFor="let clase of datosSabado">
+      
+      <app-card-horario 
+      [nombre]="clase.curso.nombre"
+      [hora_inicio]="clase.horario.hora_inicio"
+      [hora_termino]="clase.horario.hora_termino"
+      [profesor]="clase.curso.profesor"
+      [sala]="clase.sala"></app-card-horario>
+
+    </div>
+  </div>
+
+  <div *ngIf="selectedSegment === 'domingo'">
+    <div *ngFor="let clase of datosDomingo">
+      
+      <app-card-horario 
+      [nombre]="clase.curso.nombre"
+      [hora_inicio]="clase.horario.hora_inicio"
+      [hora_termino]="clase.horario.hora_termino"
+      [profesor]="clase.curso.profesor"
+      [sala]="clase.sala"></app-card-horario>
+
+    </div>
+  </div>
+</ion-content> 
+ 

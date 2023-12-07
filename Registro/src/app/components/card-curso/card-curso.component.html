@@ -1,0 +1,30 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{nombre}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    Profesor: {{profesor}}
+  </ion-card-content>
+
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>Asistencia</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ul>
+          <li *ngFor="let asistencia of asistencias.slice(0, limiteMostrar)">
+            <span [style.background-color]="asistencia.estado === 'Presente' ? 'green' : 'red'"
+              style="border-radius: 50%; display: inline-block; width: 10px; height: 10px; margin-right: 5px;"></span>
+            <span [style.color]="asistencia.estado === 'Presente' ? 'green' : 'red'">{{ asistencia.fecha }}</span> <br>
+            <span>{{ asistencia.estado }}</span>
+          </li>
+        </ul>
+        <ion-icon class="boton" *ngIf="limiteMostrar < asistencias.length" (click)="verMas()" name="add"></ion-icon>
+        <ion-icon class="boton" *ngIf="limiteMostrar > 5" (click)="verMenos()" name="remove"></ion-icon>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+  
+</ion-card>

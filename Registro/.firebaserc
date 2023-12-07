@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "qrduoc": {
+      "hosting": {
+        "app": [
+          "qrduoc"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "qrduoc"
+  }
+}

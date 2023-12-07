@@ -1,0 +1,18 @@
+ion-card{
+    font-size: 10%;
+}
+.titulo{
+    text-align: center;
+    padding-left: 80px;
+}
+
+ion-segment{
+    width: fit-content;
+}
+
+ion-segment-button{
+    min-width: 14.285%;
+}
+.selected-card {
+    border: 2px solid var(--ion-color-primary); 
+  }

@@ -1,0 +1,24 @@
+.titulo{
+    text-align: center;
+    padding-left: 80px;
+}
+
+.container{
+    width: 90%;
+    text-align: center;
+    margin-top: 1%;
+    margin: auto;
+}
+
+
+.avatar {
+    vertical-align: middle;
+    width: 120px; /* Ancho fijo */
+    height: 120px; /* Altura fija */
+    border-radius: 95%;
+    margin: 2%;
+  }
+
+ion-card{
+    margin: auto;
+}

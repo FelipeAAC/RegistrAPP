@@ -1,0 +1,38 @@
+<ion-content>
+  <div class="escritorio">
+    <div class="container">
+      <div class="logo">
+        <img alt="Duocuc" src="../../assets/icon/LogoQR.png" />
+      </div>
+      <form [formGroup]="form" (keydown)="onFormKeyDown($event)">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title color="primary">Inicio de Sesión</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-item>
+              <ion-input label="Ingrese el Correo" labelPlacement="floating" placeholder="correo.ejemplo@duocuc.cl"
+                type="email" formControlName="email"></ion-input>
+            </ion-item>
+            <app-error-message [field]="form.get('email')" error="required" mensaje="El correo es obligatorio"></app-error-message>
+            <app-error-message [field]="form.get('email')" error="email" mensaje="El correo es inválido"></app-error-message>
+            <ion-item>
+              <ion-input label="Ingresa la Contraseña" labelPlacement="floating" placeholder="*********" type="password"
+                formControlName="password"></ion-input>
+            </ion-item>
+            <app-error-message [field]="form.get('password')" error="required" mensaje="La contraseña es obligatoria"></app-error-message>
+            
+
+            <ion-button shape="round" fill="clear" [routerLink]="['/recuperar']" color="dark">¿Olvidaste tu
+              contraseña?</ion-button><br>
+            <app-boton label="Iniciar Sesión" (click)="iniciarSesion()" id="loginButton"> </app-boton><br>
+            <ion-button shape="round" fill="clear" [routerLink]="['/registro']">Registrarse</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </form>
+    </div>
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titulo">
+      Asistencia {{ username }}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-menu-button slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-menu-button>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-toolbar>
+    <ion-select [(ngModel)]="claseSeleccionada" justify="space-between" label="Curso: " interface="popover" placeholder="Curso1">
+      <ion-select-option *ngFor="let clase of clases" [value]="clase.id">{{ clase.curso }}</ion-select-option>
+    </ion-select>
+    <ion-segment [(ngModel)]="selectedSegment">
+      <ion-segment-button value="segment1">Generar codigo QR</ion-segment-button>
+      <ion-segment-button value="segment2">Asistencia manual</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <div class="codigoQR" *ngIf="selectedSegment === 'segment1'">
+    <div class="container">
+      <div class="camara">
+        <qrcode [qrdata]="qrCodeData" [width]="300" [errorCorrectionLevel]="'M'"></qrcode>
+      </div>
+      <ion-button (click)="generarCodigo()">Generar código</ion-button>
+    </div>
+  </div>
+
+  <div class="codigoManual" *ngIf="selectedSegment === 'segment2'">
+    <ion-list>
+      <ion-item *ngFor="let student of students" class="alumno">
+        <ion-label class="nombre">{{ student.name }}</ion-label>
+        <ion-radio-group value="Presente">
+          <ion-radio value="Ausente" aria-label="Custom checkbox">Ausente</ion-radio>
+          <ion-radio value="Presente" aria-label="Custom checkbox">Presente</ion-radio>
+          <ion-radio value="Justificado" aria-label="Custom checkbox that is checked">Justificado</ion-radio>
+        </ion-radio-group>
+
+      </ion-item>
+    </ion-list>
+    <ion-button>
+      Confirmar asistencia
+    </ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titulo">
+      Lector QR: {{ username }}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-menu-button slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-menu-button>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="selectedSegment">
+      <ion-segment-button value="segment1">Escanear</ion-segment-button>
+      <ion-segment-button value="segment2">Ingresar</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <div class="codigoQR" *ngIf="selectedSegment === 'segment1'">
+    <div class="container">
+      <div class="camara">
+        <ion-icon name="camera-outline" style="font-size: 200px;"></ion-icon>
+      </div>
+      <div class="camara">
+        <app-boton label="Escanear QR" (click)="scan()"></app-boton>
+      </div>
+      <!-- Elemento para mostrar el resultado del escaneo -->
+<ion-text *ngIf="scanResult">
+  {{ scanResult }}
+</ion-text>
+    </div>
+  </div>
+  <div class="codigoManual" *ngIf="selectedSegment === 'segment2'">
+    <ion-input label="Ingresa el código" label-placement="floating" fill="outline" placeholder="Ejemplo: ABCDE12345"></ion-input>
+    <app-boton label="Ingresar"></app-boton>
+  </div>
+</ion-content>

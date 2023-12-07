@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titulo">
+      Perfil: {{ username }}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-menu-button slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-menu-button>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+    <div class="container">
+      <div class="avatar-container"><div class="foto">
+        <img [src]="imagenPerfil" alt="Foto de perfil" class="avatar">
+        <ion-icon name="unlink-outline" class="editar-icon" (click)="seleccionarImagen()"></ion-icon>
+        <input type="file" #fileInput style="display: none;" (change)="cargarNuevaImagen($event)">
+      </div>
+    </div>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-icon color="primary" (click)="isEditing = !isEditing" [name]="isEditing ? 'save-outline' : 'settings-outline'"
+                 class="{{ isEditing ? 'icon-save' : 'icon-settings' }}" style="font-size: 25px;"></ion-icon>
+            </ion-col>
+            <ion-col>
+              <ion-card-title>Información</ion-card-title>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+      <ion-card-content>
+          <ion-item>
+            <ion-label position="stacked">Nombres</ion-label>
+            <ion-input [(ngModel)]="nombres" [disabled]="!isEditing" name="nombres"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Correo</ion-label>
+            <ion-input [(ngModel)]="correo" [disabled]="!isEditing" name="correo"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Escuela</ion-label>
+            <ion-input [(ngModel)]="carrera" [disabled]="!isEditing" name="carrera"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Jornada</ion-label>
+            <ion-input [(ngModel)]="jornada" [disabled]="!isEditing" name="jornada"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">RUT</ion-label>
+            <ion-input [(ngModel)]="rut" [disabled]="!isEditing" name="rut"></ion-input>
+          </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,22 +1,23 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth/auth-guard';
 
 const routes: Routes = [
   {
+    path:'login',
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
+  },
+  {
     path:'carga',
-    loadChildren: () => import('./carga/carga.module').then(m => m.CargaPageModule)
+    loadChildren: () => import('./pages/carga/carga.module').then(m => m.CargaPageModule)
   },
   {
     path:'registro',
-    loadChildren: () => import('./registro/registro.module').then(m => m.RegistroPageModule)
-  },
-  {
-    path:'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+    loadChildren: () => import('./pages/registro/registro.module').then(m => m.RegistroPageModule)
   },
   {
     path:'recuperar',
-    loadChildren: () => import('./recuperar/recuperar.module').then(m => m.RecuperarPageModule)
+    loadChildren: () => import('./pages/recuperar/recuperar.module').then(m => m.RecuperarPageModule)
   },
   {
     path: '',
@@ -24,23 +25,24 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: '',
-    loadChildren: () => import('./alumno/tabsalumno/tabs.module').then(m => m.TabsPageModule)
+    path: 'alumno',
+    loadChildren: () => import('./pages/alumno/tabsalumno/tabs.module').then(m => m.TabsPageModule), canLoad: [AuthGuard]
   },
   {
-    path: '',
-    loadChildren: () => import('./profesor/tabsprofesor/tabs.module').then(m => m.TabsPageModule)
+    path: 'profesor',
+    loadChildren: () => import('./pages/profesor/tabsprofesor/tabs.module').then(m => m.TabsPageModule), canLoad: [AuthGuard]
   },
   {
     path: 'contacto',
-    loadChildren: () => import('./contacto/contacto.module').then( m => m.ContactoPageModule)
-  },  {
+    loadChildren: () => import('./pages/contacto/contacto.module').then( m => m.ContactoPageModule), canLoad: [AuthGuard]
+  },
+  {
     path: 'informacion',
-    loadChildren: () => import('./informacion/informacion.module').then( m => m.InformacionPageModule)
+    loadChildren: () => import('./pages/informacion/informacion.module').then( m => m.InformacionPageModule), canLoad: [AuthGuard]
   },
   {
     path: 'configuracion',
-    loadChildren: () => import('./configuracion/configuracion.module').then( m => m.ConfiguracionPageModule)
+    loadChildren: () => import('./pages/configuracion/configuracion.module').then( m => m.ConfiguracionPageModule), canLoad: [AuthGuard]
   },
 
 

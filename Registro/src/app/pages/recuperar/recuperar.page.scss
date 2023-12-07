@@ -1,0 +1,66 @@
+.escritorio{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;  
+    background-color: var(--ion-color-danger-shade);
+}
+
+.container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--ion-color-danger-shade);
+    height: 100%;
+    min-height: fit-content;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+
+    max-width: 200px;
+    margin:auto;
+}
+
+ion-card{
+    width: 90%;
+    min-height: fit-content;
+    margin-top: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+ion-button {
+    width: 90%;
+    max-width: 500px;
+    max-height: 50px;
+    margin-top: 1%;
+}
+
+@media (min-width: 900px) {
+    .container {
+        width: 25%;
+        height: 80%;
+        border-radius: 5%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    }
+    .escritorio{
+        background: rgb(14,17,48);
+        background: linear-gradient(90deg, rgba(14,17,48,1) 0%, rgba(14,29,47,0.877264284620098) 100%);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        .escritorio {
+            background: rgb(14,14,14);
+            background: linear-gradient(90deg, rgba(14,14,14,1) 0%, rgba(32,32,32,1) 100%);
+        }
+}
+}
